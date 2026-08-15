@@ -289,6 +289,41 @@ ${STATS}
 <section class="sec">
   <div class="wrap">
     <div class="sec-head">
+      <div data-r><p class="eyebrow">Leadership</p><h2 class="h-sec">Directors who have delivered.</h2></div>
+      <a class="btn btn-ghost-dark" href="about.html" data-r>Meet the directors <span class="arr">&rarr;</span></a>
+    </div>
+    <div class="dir">
+      <div class="card dir-card" data-r>
+        <div class="monogram">MT</div>
+        <span class="role">Director &middot; Mining &amp; Commercial</span>
+        <h3>Morgan Taylor</h3>
+        <p class="cred">MBA</p>
+        <p class="bio">Senior executive experience at South Australia's largest open cut miner — overseeing production, maintenance and crushing operations — with delivery lead experience on Tier&nbsp;1 infrastructure.</p>
+        <ul class="str">
+          <li>Commercial and operational integration</li>
+          <li>MSA negotiation and contract strategy</li>
+          <li>Fleet and plant optimisation</li>
+        </ul>
+      </div>
+      <div class="card dir-card" data-r data-d="1">
+        <div class="monogram">MP</div>
+        <span class="role">Director &middot; Construction</span>
+        <h3>Michael Pastore</h3>
+        <p class="cred">BEng (Hons) &middot; Building Work Supervisor — Civil Construction (BLD 321368)</p>
+        <p class="bio">Civil construction specialist with delivery experience across contractor environments from Tier&nbsp;1 to Tier&nbsp;3 — earthworks, structures, mining, defence and infrastructure projects.</p>
+        <ul class="str">
+          <li>Large-scale civil earthworks and infrastructure delivery</li>
+          <li>Subcontractor and supplier management</li>
+          <li>Production discipline in Tier&nbsp;1 environments</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-tint">
+  <div class="wrap">
+    <div class="sec-head">
       <div data-r>
         <p class="eyebrow">Core services</p>
         <h2 class="h-sec">Six ways we take responsibility.</h2>
@@ -306,7 +341,7 @@ ${STATS}
   </div>
 </section>
 
-<section class="sec sec-tint">
+<section class="sec">
   <div class="wrap">
     <div class="sec-head"><div data-r><p class="eyebrow">Sectors</p><h2 class="h-sec">Where we work.</h2></div></div>
     <div class="sectors">
@@ -324,30 +359,6 @@ ${STATS}
   </div>
 </section>
 
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <div data-r><p class="eyebrow">Leadership</p><h2 class="h-sec">Directors who have delivered.</h2></div>
-      <a class="btn btn-ghost-dark" href="about.html" data-r>Meet the directors <span class="arr">&rarr;</span></a>
-    </div>
-    <div class="dir">
-      <div class="card dir-card" data-r>
-        <div class="monogram">MT</div>
-        <span class="role">Director &middot; Mining &amp; Commercial</span>
-        <h3>Morgan Taylor</h3>
-        <p class="cred">MBA</p>
-        <p class="bio">Senior executive experience at South Australia's largest open cut miner — overseeing production, maintenance and crushing operations — with delivery lead experience on Tier&nbsp;1 infrastructure.</p>
-      </div>
-      <div class="card dir-card" data-r data-d="1">
-        <div class="monogram">MP</div>
-        <span class="role">Director &middot; Construction</span>
-        <h3>Michael Pastore</h3>
-        <p class="cred">BEng (Hons) &middot; Building Work Supervisor — Civil Construction (BLD 321368)</p>
-        <p class="bio">Civil construction specialist with delivery experience across contractor environments from Tier&nbsp;1 to Tier&nbsp;3 — earthworks, structures, mining, defence and infrastructure projects.</p>
-      </div>
-    </div>
-  </div>
-</section>
 ${ctaBand("Let's talk about your next project.", "Advisory, embedded or end-to-end delivery — engagement scoped to the project in front of you.")}
 ${footer}`;
 
