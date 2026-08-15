@@ -102,8 +102,11 @@ p{margin:0}
 .hero{position:relative;background:var(--navy);color:#fff;overflow:hidden;isolation:isolate}
 .hero .art{position:absolute;inset:0;z-index:-1}
 .hero .art svg{width:100%;height:100%}
-.hero-in{padding:clamp(4.2rem,9vw,7.5rem) 0 clamp(3.4rem,7vw,5.6rem)}
-.hero .h-display{max-width:15ch}
+.hero-in{padding:clamp(4.2rem,9vw,7rem) 0 clamp(3.4rem,7vw,5rem)}
+/* Interior pages carry only eyebrow + h1 + lede, so the homepage's hero height
+   leaves a dead navy slab underneath. Tighter padding for those. */
+.hero-sm .hero-in{padding:clamp(3rem,6vw,4.4rem) 0 clamp(2.8rem,5vw,3.6rem)}
+.hero .h-display{max-width:17ch;text-wrap:balance}
 .hero .lede{margin-top:1.4rem}
 .hero .cta-row{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.3rem}
 .hero-foot{
@@ -120,8 +123,8 @@ p{margin:0}
 }
 .stat{position:relative;padding-left:1.15rem}
 .stat::before{content:"";position:absolute;left:0;top:.42rem;bottom:.42rem;width:2px;background:var(--copper)}
-.stat .n{font-size:clamp(1.7rem,3.4vw,2.5rem);font-weight:700;letter-spacing:-.02em;line-height:1.05}
-.stat .l{margin-top:.45rem;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mist-soft)}
+.stat .n{display:block;font-size:clamp(1.7rem,3.4vw,2.5rem);font-weight:700;letter-spacing:-.02em;line-height:1.05}
+.stat .l{display:block;margin-top:.55rem;font-size:.72rem;line-height:1.45;letter-spacing:.2em;text-transform:uppercase;color:var(--mist-soft)}
 
 /* ---------- sections ---------- */
 .sec{padding:clamp(3.6rem,8vw,6.2rem) 0}
@@ -139,12 +142,15 @@ p{margin:0}
   padding:1.9rem 1.8rem;box-shadow:0 1px 0 rgba(13,32,53,.03);
   transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
 }
-a.card{text-decoration:none;display:block}
+a.card{text-decoration:none}
+/* Cards in a row must be equal height with their CTA pinned to the bottom,
+   or a 2-line title knocks that card's link out of alignment with its neighbours. */
+.card{display:flex;flex-direction:column}
 .card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#CBD4DC}
 .num{font-size:.8rem;font-weight:700;letter-spacing:.26em;color:var(--copper)}
-.card h3{margin-top:.8rem;font-size:1.16rem;letter-spacing:-.01em}
+.card h3{margin-top:.8rem;font-size:1.16rem;letter-spacing:-.01em;text-wrap:balance}
 .card .d{margin-top:.65rem;color:var(--ink-soft);font-size:.96rem;line-height:1.62}
-.card .go{margin-top:1.1rem;font-size:.84rem;font-weight:600;color:var(--navy);display:inline-flex;gap:.45rem;align-items:center}
+.card .go{margin-top:auto;padding-top:1.25rem;font-size:.84rem;font-weight:600;color:var(--navy);display:inline-flex;gap:.45rem;align-items:center;align-self:flex-start}
 .card .go .arr{color:var(--copper)}
 
 .on-navy .card{background:var(--navy-panel);border-color:var(--line-navy);box-shadow:none}
@@ -283,12 +289,12 @@ a.card{text-decoration:none;display:block}
 .ribbon .dot{width:7px;height:7px;border-radius:50%;background:var(--copper-soft)}
 .ribbon:hover{background:#12283E}
 
-/* ---------- reveal (JS-resilient: visible by default) ---------- */
-.js:not(.nomotion) [data-r]{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1)}
-.js:not(.nomotion) [data-r].in{opacity:1;transform:none}
-.js:not(.nomotion) [data-r][data-d="1"]{transition-delay:.08s}
-.js:not(.nomotion) [data-r][data-d="2"]{transition-delay:.16s}
-.js:not(.nomotion) [data-r][data-d="3"]{transition-delay:.24s}
+/* ---------- reveal ----------
+   Deliberately NO opacity/transform reveal. Content is always rendered.
+   (2026-08-15: a fade-in-on-scroll made headings render grey and dropped whole
+   cards to invisible in screenshots and on slow paints. For a credibility site
+   that gets opened once, on a phone, by a buyer checking you out, guaranteed
+   legibility beats motion. [data-r] is retained purely as a build hook.) */
 
 /* ---------- responsive ---------- */
 @media (max-width:980px){

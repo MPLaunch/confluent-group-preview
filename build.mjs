@@ -203,13 +203,6 @@ const footer = `
 </footer>
 <a class="ribbon" href="https://mplaunch.com.au"><span class="dot"></span>Design concept &middot; MP Launch</a>
 <script>
-(function(){var d=document.documentElement;d.classList.add("js");
-if(matchMedia("(prefers-reduced-motion: reduce)").matches){d.classList.add("nomotion");return;}
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{rootMargin:"0px 0px -8% 0px",threshold:.06});
-document.querySelectorAll("[data-r]").forEach(function(el){io.observe(el);});
-setTimeout(function(){document.querySelectorAll("[data-r]:not(.in)").forEach(function(el){el.classList.add("in");});},1600);})();
-</script>
-<script>
 (function(){try{
   if(navigator.webdriver)return;
   var v=new URLSearchParams(location.search).get('v');
@@ -365,7 +358,7 @@ const about = head(
   "About — Confluent Group | Civil &amp; Mining Consultancy, Adelaide",
   "Senior leadership with direct delivery accountability. Meet the directors of Confluent Group — credentialled advisors who have led the projects, plants and contracts they now advise on."
 ) + header("about.html") + `
-<section class="hero on-navy">
+<section class="hero hero-sm on-navy">
   <div class="art">${ART_CONTOURS}</div>
   <div class="wrap hero-in">
     <p class="eyebrow" data-r>About Confluent Group</p>
@@ -449,7 +442,7 @@ const mining = head(
   "Mining Operations &amp; Processing Advisory — Confluent Group",
   "Mining operations and optimisation, and crushing and processing advisory — from directors who have overseen production, maintenance and crushing operations at South Australia's largest open cut miner."
 ) + header("mining.html") + `
-<section class="hero on-navy">
+<section class="hero hero-sm on-navy">
   <div class="art">${ART_BENCHES}</div>
   <div class="wrap hero-in">
     <p class="eyebrow" data-r>Sector — Mining</p>
@@ -524,7 +517,7 @@ const civil = head(
   "Civil Infrastructure Delivery &amp; Construction Management — Confluent Group",
   "Civil infrastructure delivery and project & construction management — earthworks, structures, drainage and pavements with production discipline and commercial controls proven in Tier 1 environments."
 ) + header("civil.html") + `
-<section class="hero on-navy">
+<section class="hero hero-sm on-navy">
   <div class="art">${ART_ROAD}</div>
   <div class="wrap hero-in">
     <p class="eyebrow" data-r>Sector — Civil Infrastructure</p>
@@ -612,7 +605,7 @@ const advisory = head(
   "Commercial &amp; Contract Advisory — Confluent Group",
   "MSA negotiation, contract strategy, margin protection and dispute resolution at scale — plus constructability and program management from people who have delivered in Tier 1 environments."
 ) + header("advisory.html") + `
-<section class="hero on-navy">
+<section class="hero hero-sm on-navy">
   <div class="art">${ART_PROGRAM}</div>
   <div class="wrap hero-in">
     <p class="eyebrow" data-r>Commercial &amp; Advisory</p>
@@ -674,7 +667,7 @@ const projects = head(
   "Project Experience — Confluent Group",
   "Representative project exposure across civil infrastructure and open cut mining — delivery, commercial and operational outcomes on projects of this type and scale in Tier 1 environments."
 ) + header("projects.html") + `
-<section class="hero on-navy">
+<section class="hero hero-sm on-navy">
   <div class="art">${ART_GRID}</div>
   <div class="wrap hero-in">
     <p class="eyebrow" data-r>Project experience</p>
@@ -752,7 +745,7 @@ const contact = head(
   "Contact — Confluent Group | Adelaide, South Australia",
   "Start a conversation with Confluent Group — a South Australian civil and mining consultancy. Advisory, embedded leadership or end-to-end delivery."
 ) + header("contact.html") + `
-<section class="hero on-navy">
+<section class="hero hero-sm on-navy">
   <div class="art">${ART_CONTOURS}</div>
   <div class="wrap hero-in">
     <p class="eyebrow" data-r>Contact</p>
