@@ -1,5 +1,5 @@
 // Confluent Group concept — page generator (MP Launch, 2026-08-15)
-// node build.mjs  → emits 7 static pages sharing one chrome.
+// node build.mjs  → emits 8 static pages sharing one chrome.
 // EVERY factual claim traces to the client's capability statement or email —
 // see "claims-source table" in the prospect folder's 00-pitch-pack.md.
 import { writeFileSync } from "node:fs";
@@ -108,6 +108,7 @@ const NAV = [
   ["civil.html", "Civil &amp; Delivery"],
   ["advisory.html", "Advisory"],
   ["projects.html", "Projects"],
+  ["careers.html", "Careers"],
 ];
 
 const head = (title, desc, extra = "") => `<!DOCTYPE html>
@@ -172,6 +173,7 @@ const footer = `
       <ul>
         <li><a href="about.html">About</a></li>
         <li><a href="projects.html">Projects</a></li>
+        <li><a href="careers.html">Careers</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -796,7 +798,95 @@ const contact = head(
 ${ctaBand("Prefer email?", "Send through the project, the tender or the question — we'll come back to you directly.")}
 ${footer}`;
 
+/* ================================================================
+   PAGE: careers.html
+   Sourced: Michael's 2026-08-16 email — "host an open avenue for
+   engineers / project managers to apply for advertised positions",
+   "aim is to grow and bring on additional project managers / engineers".
+   The role card is a clearly-labelled EXAMPLE (design preview) — no real
+   listing exists yet, so none is claimed.
+   ================================================================ */
+const careers = head(
+  "Careers — Confluent Group | Project Managers &amp; Engineers",
+  "Careers with Confluent Group — experienced project managers and engineers for civil and mining delivery, Adelaide, South Australia. Advertised positions and expressions of interest."
+) + header("careers.html") + `
+<section class="hero hero-sm on-navy">
+  <div class="art">${ART_PROGRAM}</div>
+  <div class="wrap hero-in">
+    <p class="eyebrow" data-r>Careers</p>
+    <h1 class="h-display" data-r data-d="1">Careers built on delivery.</h1>
+    <p class="lede" data-r data-d="2">Confluent Group is growing — bringing experienced project managers and engineers into civil and mining delivery. Advertised positions are posted on this page; when nothing is open, register your interest and a director will come back to you directly.</p>
+    <div class="cta-row" data-r data-d="3">
+      <a class="btn btn-light" href="#register">Register your interest <span class="arr">&rarr;</span></a>
+      <a class="btn btn-ghost" href="about.html">Meet the directors</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><div data-r><p class="eyebrow">Current opportunities</p><h2 class="h-sec">Advertised positions.</h2></div></div>
+    <div class="grid2">
+      <div class="card" data-r>
+        <h3>No positions are currently advertised.</h3>
+        <p class="d">New roles are posted here as they open. Register your interest below — when a role fits your background, we'll already know each other.</p>
+        <a class="go" href="#register">Register your interest <span class="arr">&rarr;</span></a>
+      </div>
+      <article class="card proj" data-r data-d="1">
+        <span class="tag">Example listing &middot; design preview</span>
+        <h3>Senior Project Manager — Civil Infrastructure</h3>
+        <p class="d">Adelaide SA &middot; Full-time &middot; Applications close 30 September</p>
+        <ul>
+          <li>Lead delivery on a state infrastructure project</li>
+          <li>Own the program, commercial position and client relationship</li>
+          <li>Tier 1 delivery experience well regarded</li>
+        </ul>
+        <p class="fnote">Shown as a design preview — how an advertised role appears on the live site.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-navy on-navy">
+  <div class="wrap">
+    <div class="sec-head"><div data-r><p class="eyebrow">Why Confluent</p><h2 class="h-sec">Senior work, done properly.</h2></div></div>
+    <div class="grid3">
+      <div class="card model" data-r><span class="tag">LINEAGE</span><h3>Tier 1 contractor experience</h3><p class="d">Work alongside directors who have led delivery, commercial and operational outcomes in Tier&nbsp;1 environments.</p></div>
+      <div class="card model" data-r data-d="1"><span class="tag">BREADTH</span><h3>Mining, civil infrastructure and defence</h3><p class="d">Project exposure across sectors — open cut mining, state infrastructure and defence environments.</p></div>
+      <div class="card model" data-r data-d="2"><span class="tag">MODEL</span><h3>Embedded with real clients</h3><p class="d">Advisory, embedded and delivery engagements — professional work inside real project teams.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="register">
+  <div class="wrap contact-grid">
+    <div data-r>
+      <p class="eyebrow">Expressions of interest</p>
+      <h2 class="h-sub">When a role fits, we'll already know each other.</h2>
+      <div class="c-line"><span class="k">Email</span><a href="mailto:info@confluentgroup.com.au">info@confluentgroup.com.au</a></div>
+      <div class="c-line"><span class="k">Phone</span><a href="tel:+61425014666">0425 014 666</a></div>
+      <div class="c-line"><span class="k">Location</span><span class="plain">Adelaide, South Australia &middot; national reach</span></div>
+      <div class="c-line"><span class="k">Disciplines</span><span class="plain">Project management &middot; Engineering &middot; Commercial &amp; contracts</span></div>
+    </div>
+    <div class="form" data-r data-d="1">
+      <div class="f-row">
+        <div class="f-field"><label for="c-name">Name</label><input id="c-name" type="text" autocomplete="name"></div>
+        <div class="f-field"><label for="c-phone">Phone</label><input id="c-phone" type="tel" autocomplete="tel"></div>
+      </div>
+      <div class="f-field"><label for="c-email">Email</label><input id="c-email" type="email" autocomplete="email"></div>
+      <div class="f-field"><label for="c-disc">Discipline</label>
+        <select id="c-disc"><option>Project management</option><option>Engineering</option><option>Commercial &amp; contracts</option><option>Other</option></select>
+      </div>
+      <div class="f-field"><label for="c-bg">Your background</label><textarea id="c-bg" rows="4"></textarea></div>
+      <a class="btn btn-solid" href="mailto:info@confluentgroup.com.au?subject=Expression%20of%20interest%20%E2%80%94%20via%20confluentgroup.com.au">Register your interest <span class="arr">&rarr;</span></a>
+      <p class="fnote">Concept note: on the live site this form delivers straight to your inbox with spam protection — shown here as a design preview.</p>
+    </div>
+  </div>
+</section>
+${ctaBand("An experienced PM or engineer?", "Email your CV with a few lines on your background — a director will come back to you directly.")}
+${footer}`;
+
 /* ---------- emit ---------- */
-const pages = { "index.html": home, "about.html": about, "mining.html": mining, "civil.html": civil, "advisory.html": advisory, "projects.html": projects, "contact.html": contact };
+const pages = { "index.html": home, "about.html": about, "mining.html": mining, "civil.html": civil, "advisory.html": advisory, "projects.html": projects, "careers.html": careers, "contact.html": contact };
 for (const [name, html] of Object.entries(pages)) writeFileSync(new URL(name, import.meta.url), html);
 console.log("Built:", Object.keys(pages).join(", "));
