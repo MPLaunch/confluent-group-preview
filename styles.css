@@ -245,16 +245,23 @@ a.card{text-decoration:none}
 
 /* ---------- CTA band ---------- */
 .cta-band{background:var(--navy);color:#fff;position:relative;overflow:hidden}
-.cta-in{padding:clamp(2.2rem,4.2vw,3.1rem) 0;display:grid;grid-template-columns:1fr minmax(0,420px);align-items:center;gap:clamp(1.6rem,4vw,3rem)}
+/* A navy section immediately followed by the navy CTA band stacked ~150px of section
+   padding on top of the band's own — one huge empty navy void. Collapse it and mark the
+   seam with a hairline so the two still read as separate blocks. */
+.sec-navy + .cta-band{border-top:1px solid var(--line-navy)}
+.sec-navy + .cta-band .cta-in{padding-top:clamp(1.8rem,3vw,2.5rem)}
+.cta-in{padding:clamp(2.2rem,4.2vw,3.1rem) 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,400px);align-items:center;gap:clamp(1.6rem,4vw,3rem)}
 .cta-in .h-sec{max-width:20ch}
 .cta-in .sub{margin-top:.75rem;color:var(--mist);max-width:46ch}
 .cta-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1.4rem}
 .cta-form{
   background:var(--navy-panel);border:1px solid var(--line-navy);border-radius:14px;
-  padding:1.35rem 1.35rem 1.2rem;
+  padding:1.2rem 1.2rem 1.1rem;min-width:0;
 }
-.cta-form .f-field{margin-bottom:.7rem}
-.cta-form .f-row{gap:.7rem}
+.cta-form .f-field{margin-bottom:.55rem;gap:.3rem}
+.cta-form .f-row{gap:.6rem}
+.cta-form .f-field label{font-size:.7rem;letter-spacing:.12em}
+.cta-form .f-field input,.cta-form .f-field textarea{padding:.6rem .75rem;border-radius:7px}
 /* On navy the light-surface form styles invert: translucent fields, light submit. */
 .cta-form .f-field label{color:var(--mist)}
 .cta-form .f-field input,
@@ -287,12 +294,16 @@ a.card{text-decoration:none}
 .c-line .plain{font-size:clamp(1.05rem,1.8vw,1.3rem);font-weight:600;color:var(--navy)}
 .form{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:2rem;box-shadow:var(--shadow)}
 .form .fnote{font-size:.8rem;color:var(--ink-soft);margin-top:1rem;line-height:1.5}
-.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.f-field{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;min-width:0}
+.f-field{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem;min-width:0}
 .f-field label{font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
 .f-field input,.f-field textarea,.f-field select{
   font:inherit;padding:.8rem .95rem;border:1px solid #CBD4DC;border-radius:8px;background:#FBFCFD;color:var(--ink);
+  /* width+min-width are load-bearing: without them an input keeps its intrinsic size
+     attribute width and overflows any grid/flex column narrower than ~20 characters. */
+  width:100%;min-width:0;max-width:100%;
 }
+.f-field textarea{resize:vertical}
 .f-field input:focus,.f-field textarea:focus,.f-field select:focus{outline:2px solid var(--navy);outline-offset:1px;border-color:var(--navy)}
 
 /* ---------- footer ---------- */
