@@ -148,14 +148,26 @@ const ctaBand = (h, sub) => `
 <section class="cta-band on-navy">
   <div class="art" style="position:absolute;inset:0;opacity:.5">${ART_CONTOURS}</div>
   <div class="wrap cta-in" style="position:relative">
-    <div data-r>
-      <p class="eyebrow">Start a conversation</p>
-      <h2 class="h-sec">${h}</h2>
-      <p class="sub">${sub}</p>
+    <div class="cta-copy">
+      <div data-r>
+        <p class="eyebrow">Start a conversation</p>
+        <h2 class="h-sec">${h}</h2>
+        <p class="sub">${sub}</p>
+      </div>
+      <div class="cta-actions" data-r data-d="1">
+        <a class="btn btn-light" href="mailto:info@confluentgroup.com.au">info@confluentgroup.com.au</a>
+        <a class="btn btn-ghost" href="tel:+61425014666">0425 014 666</a>
+      </div>
     </div>
-    <div class="cta-actions" data-r data-d="1">
-      <a class="btn btn-light" href="mailto:info@confluentgroup.com.au">info@confluentgroup.com.au</a>
-      <a class="btn btn-ghost" href="tel:+61425014666">0425 014 666</a>
+    <div class="cta-form" data-r data-d="1">
+      <div class="f-row">
+        <div class="f-field"><label for="q-name">Name</label><input id="q-name" type="text" autocomplete="name"></div>
+        <div class="f-field"><label for="q-phone">Phone</label><input id="q-phone" type="tel" autocomplete="tel"></div>
+      </div>
+      <div class="f-field"><label for="q-email">Email</label><input id="q-email" type="email" autocomplete="email"></div>
+      <div class="f-field"><label for="q-msg">The project in front of you</label><textarea id="q-msg" rows="3"></textarea></div>
+      <a class="btn btn-solid" href="mailto:info@confluentgroup.com.au?subject=Project%20enquiry%20%E2%80%94%20via%20confluentgroup.com.au">Send enquiry <span class="arr">&rarr;</span></a>
+      <p class="fnote">Concept note: on the live site this delivers straight to your inbox with spam protection.</p>
     </div>
   </div>
 </section>`;
@@ -296,7 +308,7 @@ ${STATS}
     </div>
     <div class="dir">
       <div class="card dir-card" data-r>
-        <div class="monogram">MT</div>
+        <img class="headshot" src="assets/morgan-taylor.jpg" alt="Morgan Taylor" width="512" height="512" loading="lazy" decoding="async">
         <span class="role">Director &middot; Mining &amp; Commercial</span>
         <h3>Morgan Taylor</h3>
         <p class="cred">MBA</p>
@@ -308,7 +320,7 @@ ${STATS}
         </ul>
       </div>
       <div class="card dir-card" data-r data-d="1">
-        <div class="monogram">MP</div>
+        <img class="headshot" src="assets/michael-pastore.jpg" alt="Michael Pastore" width="512" height="512" loading="lazy" decoding="async">
         <span class="role">Director &middot; Construction</span>
         <h3>Michael Pastore</h3>
         <p class="cred">BEng (Hons) &middot; Building Work Supervisor — Civil Construction (BLD 321368)</p>
@@ -396,7 +408,7 @@ const about = head(
     <div class="sec-head"><div data-r><p class="eyebrow">Directors</p><h2 class="h-sec">The people you'll deal with.</h2></div></div>
     <div class="dir">
       <div class="card dir-card" data-r>
-        <div class="monogram">MT</div>
+        <img class="headshot" src="assets/morgan-taylor.jpg" alt="Morgan Taylor" width="512" height="512" loading="lazy" decoding="async">
         <span class="role">Director &middot; Mining &amp; Commercial</span>
         <h3>Morgan Taylor</h3>
         <p class="cred">MBA</p>
@@ -410,7 +422,7 @@ const about = head(
         </ul>
       </div>
       <div class="card dir-card" data-r data-d="1">
-        <div class="monogram">MP</div>
+        <img class="headshot" src="assets/michael-pastore.jpg" alt="Michael Pastore" width="512" height="512" loading="lazy" decoding="async">
         <span class="role">Director &middot; Construction</span>
         <h3>Michael Pastore</h3>
         <p class="cred">BEng (Hons) &middot; Building Work Supervisor — Civil Construction (BLD 321368)</p>

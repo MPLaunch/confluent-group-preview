@@ -193,6 +193,11 @@ a.card{text-decoration:none}
   font-weight:700;font-size:1.15rem;letter-spacing:.12em;margin-bottom:1.3rem;
 }
 .on-navy .dir-card .monogram{background:#fff;color:var(--navy)}
+.dir-card .headshot{
+  width:84px;height:84px;border-radius:50%;object-fit:cover;display:block;
+  margin-bottom:1.3rem;border:1px solid var(--line);background:#fff;
+}
+.on-navy .dir-card .headshot{border-color:var(--line-navy)}
 
 /* ---------- checklist / systems ---------- */
 .sys{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.9rem 2.2rem}
@@ -240,10 +245,38 @@ a.card{text-decoration:none}
 
 /* ---------- CTA band ---------- */
 .cta-band{background:var(--navy);color:#fff;position:relative;overflow:hidden}
-.cta-in{padding:clamp(3.2rem,7vw,5rem) 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:2rem}
-.cta-in .h-sec{max-width:22ch}
-.cta-in .sub{margin-top:.9rem;color:var(--mist);max-width:52ch}
-.cta-actions{display:flex;flex-wrap:wrap;gap:.9rem}
+.cta-in{padding:clamp(2.2rem,4.2vw,3.1rem) 0;display:grid;grid-template-columns:1fr minmax(0,420px);align-items:center;gap:clamp(1.6rem,4vw,3rem)}
+.cta-in .h-sec{max-width:20ch}
+.cta-in .sub{margin-top:.75rem;color:var(--mist);max-width:46ch}
+.cta-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1.4rem}
+.cta-form{
+  background:var(--navy-panel);border:1px solid var(--line-navy);border-radius:14px;
+  padding:1.35rem 1.35rem 1.2rem;
+}
+.cta-form .f-field{margin-bottom:.7rem}
+.cta-form .f-row{gap:.7rem}
+/* On navy the light-surface form styles invert: translucent fields, light submit. */
+.cta-form .f-field label{color:var(--mist)}
+.cta-form .f-field input,
+.cta-form .cta-form-ta,
+.cta-form .f-field textarea{
+  background:rgba(255,255,255,.06);border-color:var(--line-navy);color:#fff;
+}
+.cta-form .f-field input::placeholder,.cta-form .f-field textarea::placeholder{color:rgba(255,255,255,.45)}
+.cta-form .f-field input:focus,.cta-form .f-field textarea:focus{
+  outline:2px solid rgba(255,255,255,.55);outline-offset:1px;border-color:rgba(255,255,255,.55);
+  background:rgba(255,255,255,.10);
+}
+.cta-form .btn-solid{
+  width:100%;justify-content:center;margin-top:.2rem;
+  background:#fff;color:var(--navy);
+}
+.cta-form .btn-solid:hover{background:#EAEEF2;box-shadow:0 14px 30px -16px rgba(0,0,0,.55)}
+.cta-form .btn-solid .arr{color:var(--copper)}
+.cta-form .fnote{margin-top:.7rem;color:var(--mist)}
+@media(max-width:860px){
+  .cta-in{grid-template-columns:1fr}
+}
 
 /* ---------- contact ---------- */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.8rem,4vw,3.2rem);align-items:start}
