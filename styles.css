@@ -377,3 +377,52 @@ a.card{text-decoration:none}
 }
 
 @media print{.ribbon,.burger{display:none}}
+
+
+/* ============ PHOTO LAYER (board-014 rebuild) ============ */
+/* Full-bleed photo hero. The <img> is real content (their site), never CSS background,
+   so it prints, lazy-loads properly and survives any CSS failure as a plain image. */
+.hero .ph,.cta-band .ph{position:absolute;inset:0;overflow:hidden;z-index:-1}
+.hero .ph img,.cta-band .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.hero .ph::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(100deg,rgba(9,20,34,.92) 0%,rgba(9,20,34,.62) 46%,rgba(13,32,53,.28) 100%)}
+.hero-sm .ph::after{background:linear-gradient(100deg,rgba(9,20,34,.93) 0%,rgba(9,20,34,.68) 50%,rgba(13,32,53,.34) 100%)}
+.cta-band .ph::after{content:"";position:absolute;inset:0;background:rgba(9,20,34,.86)}
+
+/* Stats band kicker (attribution: the numbers are the DIRECTORS' record) */
+.stats-kicker{text-align:center;font-size:.72rem;font-weight:700;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--mist);opacity:.85;padding-top:1.6rem}
+.stats-kicker+.stats-in{padding-top:1rem}
+
+/* Photo service cards — text ALWAYS visible (board: no hover-only reveals) */
+.pcard{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);
+  border-radius:14px;overflow:hidden;text-decoration:none;transition:transform .25s,box-shadow .25s}
+.pcard:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.pcard .im{aspect-ratio:16/10;overflow:hidden}
+.pcard .im img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.pcard:hover .im img{transform:scale(1.04)}
+.pcard .tx{padding:1.15rem 1.25rem 1.3rem}
+.pcard h3{font-size:1.05rem;letter-spacing:-.01em;color:var(--ink)}
+.pcard p{margin-top:.4rem;font-size:.9rem;line-height:1.55;color:var(--ink-soft)}
+.pcard .go{margin-top:.7rem;font-size:.82rem;font-weight:600;color:var(--navy);display:inline-flex;gap:.4rem;align-items:center}
+.pcard .go .arr{color:var(--copper)}
+
+/* Full-bleed photo statement band */
+.band-photo{position:relative;overflow:hidden;min-height:clamp(380px,56vh,560px);display:flex;align-items:flex-end}
+.band-photo > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.band-photo::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(9,20,34,.05) 30%,rgba(9,20,34,.82) 100%)}
+.band-photo .wrap{position:relative;z-index:2;padding:2.6rem 0 3rem;color:#fff}
+.band-photo .eyebrow{color:var(--copper)}
+.band-photo h2{font-size:clamp(1.5rem,3.2vw,2.3rem);letter-spacing:-.02em;max-width:26ch;color:#fff}
+.band-photo .go2{margin-top:1rem;display:inline-flex;gap:.45rem;align-items:center;color:#fff;
+  font-weight:600;font-size:.92rem;text-decoration:none;border-bottom:1px solid var(--copper);padding-bottom:.2rem}
+
+/* Projects-page photo cards */
+.proj .pim{margin:-1.9rem -1.8rem 1.1rem;aspect-ratio:16/9;overflow:hidden}
+.proj .pim img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* Careers/CTA photo band background reuses .ph */
+@media(max-width:860px){
+  .band-photo{min-height:clamp(300px,44vh,420px)}
+}

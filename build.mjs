@@ -111,6 +111,13 @@ const NAV = [
   ["careers.html", "Careers"],
 ];
 
+
+/* Responsive real-photo element. eager=true only for the page hero. */
+const pic = (name, alt, eager = false) =>
+  `<img src="assets/${name}.jpg" srcset="assets/sm/${name}.jpg 1200w, assets/${name}.jpg 2400w" sizes="100vw" alt="${alt}"${eager ? ' fetchpriority="high"' : ' loading="lazy"'} decoding="async">`;
+
+const heroPhoto = (name, alt) => `<div class="ph">${pic(name, alt, true)}</div>`;
+
 const head = (title, desc, extra = "") => `<!DOCTYPE html>
 <html lang="en-AU">
 <head>
@@ -255,6 +262,7 @@ const MODELS = `
 
 const STATS = `
 <section class="stats on-navy">
+  <p class="stats-kicker wrap">Our directors' combined record in Tier&nbsp;1 environments</p>
   <div class="wrap stats-in">
     <div class="stat" data-r><span class="n">25+</span><span class="l">Years combined</span></div>
     <div class="stat" data-r data-d="1"><span class="n">$500M+</span><span class="l">Projects delivered</span></div>
@@ -265,8 +273,9 @@ const STATS = `
 
 const DISCLAIMER = `<p class="disclaim" data-r>Representative project exposure across civil infrastructure and open cut mining. Our directors have led delivery, commercial and operational outcomes on projects of this type and scale in Tier&nbsp;1 environments.</p>`;
 
-const proj = (tag, title, items, d = 0) => `
+const proj = (tag, title, items, d = 0, img = "") => `
 <article class="card proj" data-r${d ? ` data-d="${d}"` : ""}>
+  ${img ? `<div class="pim">${pic(img, title.replace(/&[a-z]+;/g, " "))}</div>` : ""}
   <span class="tag">${tag}</span>
   <h3>${title}</h3>
   <ul>${items.map((i) => `<li>${i}</li>`).join("")}</ul>
@@ -284,11 +293,11 @@ const home = head(
 `
 ) + header("index.html") + `
 <section class="hero on-navy">
-  <div class="art">${ART_CONTOURS}</div>
+  ${heroPhoto("aerial-pit-wide", "Aerial view over open cut mining operations")}
   <div class="wrap hero-in">
     <p class="eyebrow" data-r>Civil &amp; mining consultancy — Adelaide, South Australia</p>
     <h1 class="h-display" data-r data-d="1">Proven civil and mining delivery.</h1>
-    <p class="lede" data-r data-d="2">Confluent Group is a South Australian civil and mining consultancy with delivery capability. We partner with Tier&nbsp;1 contractors, resource owners and government to plan, commercialise and execute complex projects end to end.</p>
+    <p class="lede" data-r data-d="2">Partnering with Tier&nbsp;1 contractors, resource owners and government to plan, commercialise and execute complex projects end to end.</p>
     <div class="cta-row" data-r data-d="3">
       <a class="btn btn-light" href="contact.html">Start a conversation <span class="arr">&rarr;</span></a>
       <a class="btn btn-ghost" href="projects.html">View our experience</a>
@@ -301,6 +310,53 @@ const home = head(
 ${STATS}
 
 <section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div data-r>
+        <p class="eyebrow">Core services</p>
+        <h2 class="h-sec">Six ways we take responsibility.</h2>
+        <p class="lede">Led by people who have run the projects, plants and contracts they now advise on.</p>
+      </div>
+    </div>
+    <div class="grid3">
+      <a class="pcard" href="mining.html" data-r>
+        <div class="im">${pic("aerial-benches", "Open cut mining operations from the air")}</div>
+        <div class="tx"><h3>Mining Operations &amp; Optimisation</h3><p>Production, bench sequencing, drill and blast, grade control, fleet productivity.</p><span class="go">Explore mining <span class="arr">&rarr;</span></span></div>
+      </a>
+      <a class="pcard" href="mining.html" data-r data-d="1">
+        <div class="im">${pic("pit-excavator-truck", "Excavator loading a haul truck in-pit")}</div>
+        <div class="tx"><h3>Crushing &amp; Processing Advisory</h3><p>ROM walls, fixed plant, conveyor installation, commissioning and ramp-up.</p><span class="go">Explore mining <span class="arr">&rarr;</span></span></div>
+      </a>
+      <a class="pcard" href="civil.html" data-r data-d="2">
+        <div class="im">${pic("civil-boom-pump", "Concrete boom pump pour on a civil site")}</div>
+        <div class="tx"><h3>Civil Infrastructure Delivery</h3><p>Earthworks, structures, drainage and pavements — including live-traffic staging.</p><span class="go">Explore civil <span class="arr">&rarr;</span></span></div>
+      </a>
+      <a class="pcard" href="civil.html" data-r>
+        <div class="im">${pic("civil-culvert-strip", "Structural concrete works in progress")}</div>
+        <div class="tx"><h3>Project &amp; Construction Management</h3><p>Staging, program management, temporary works, self-performed and subcontracted works.</p><span class="go">Explore civil <span class="arr">&rarr;</span></span></div>
+      </a>
+      <a class="pcard" href="advisory.html" data-r data-d="1">
+        <div class="im">${pic("civil-site-crane", "Civil works site with crane")}</div>
+        <div class="tx"><h3>Commercial &amp; Contract Advisory</h3><p>MSA negotiation, contract strategy, margin protection, dispute resolution.</p><span class="go">Explore advisory <span class="arr">&rarr;</span></span></div>
+      </a>
+      <a class="pcard" href="advisory.html" data-r data-d="2">
+        <div class="im">${pic("civil-formwork-red", "Steel formwork on a civil structure")}</div>
+        <div class="tx"><h3>Constructability &amp; Program Management</h3><p>Constructability review, sequencing, crew utilisation, execution governance.</p><span class="go">Explore advisory <span class="arr">&rarr;</span></span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="band-photo">
+  ${pic("aerial-crushing-plant", "Crushing and screening plant from the air")}
+  <div class="wrap">
+    <p class="eyebrow" data-r>Executive project experience</p>
+    <h2 data-r data-d="1">Built on the delivery discipline of Tier&nbsp;1 environments.</h2>
+    <a class="go2" href="projects.html" data-r data-d="2">See the project experience <span class="arr">&rarr;</span></a>
+  </div>
+</section>
+
+<section class="sec sec-tint">
   <div class="wrap">
     <div class="sec-head">
       <div data-r><p class="eyebrow">Leadership</p><h2 class="h-sec">Directors who have delivered.</h2></div>
@@ -335,26 +391,6 @@ ${STATS}
   </div>
 </section>
 
-<section class="sec sec-tint">
-  <div class="wrap">
-    <div class="sec-head">
-      <div data-r>
-        <p class="eyebrow">Core services</p>
-        <h2 class="h-sec">Six ways we take responsibility.</h2>
-        <p class="lede">Senior leadership with direct delivery accountability — credentialled advisors who have led the projects, plants and contracts they now advise on.</p>
-      </div>
-    </div>
-    <div class="grid3">
-      <a class="card" href="mining.html" data-r><span class="num">01</span><h3>Mining Operations &amp; Optimisation</h3><p class="d">Production management, bench sequencing, drill and blast oversight, grade control and fleet productivity.</p><span class="go">Explore mining <span class="arr">&rarr;</span></span></a>
-      <a class="card" href="mining.html" data-r data-d="1"><span class="num">02</span><h3>Crushing &amp; Processing Advisory</h3><p class="d">ROM walls, fixed plant, structural and conveyor installation oversight, commissioning and ramp-up.</p><span class="go">Explore mining <span class="arr">&rarr;</span></span></a>
-      <a class="card" href="civil.html" data-r data-d="2"><span class="num">03</span><h3>Civil Infrastructure Delivery</h3><p class="d">Earthworks, structures, drainage and pavements — including staged construction under live traffic.</p><span class="go">Explore civil <span class="arr">&rarr;</span></span></a>
-      <a class="card" href="civil.html" data-r><span class="num">04</span><h3>Project &amp; Construction Management</h3><p class="d">Construction staging, program management, temporary works and coordination of self-performed and subcontracted works.</p><span class="go">Explore civil <span class="arr">&rarr;</span></span></a>
-      <a class="card" href="advisory.html" data-r data-d="1"><span class="num">05</span><h3>Commercial &amp; Contract Advisory</h3><p class="d">MSA negotiation, contract strategy, margin protection and dispute resolution at scale.</p><span class="go">Explore advisory <span class="arr">&rarr;</span></span></a>
-      <a class="card" href="advisory.html" data-r data-d="2"><span class="num">06</span><h3>Constructability &amp; Program Management</h3><p class="d">Constructability review, detailed sequencing, crew utilisation and execution governance.</p><span class="go">Explore advisory <span class="arr">&rarr;</span></span></a>
-    </div>
-  </div>
-</section>
-
 <section class="sec">
   <div class="wrap">
     <div class="sec-head"><div data-r><p class="eyebrow">Sectors</p><h2 class="h-sec">Where we work.</h2></div></div>
@@ -373,6 +409,15 @@ ${STATS}
   </div>
 </section>
 
+<section class="band-photo">
+  ${pic("civil-formwork-crew", "Crew working on structural formwork")}
+  <div class="wrap">
+    <p class="eyebrow" data-r>Careers</p>
+    <h2 data-r data-d="1">Experienced engineers and project managers — register your interest.</h2>
+    <a class="go2" href="careers.html" data-r data-d="2">Careers at Confluent <span class="arr">&rarr;</span></a>
+  </div>
+</section>
+
 ${ctaBand("Let's talk about your next project.", "Advisory, embedded or end-to-end delivery — engagement scoped to the project in front of you.")}
 ${footer}`;
 
@@ -384,7 +429,7 @@ const about = head(
   "Senior leadership with direct delivery accountability. Meet the directors of Confluent Group — credentialled advisors who have led the projects, plants and contracts they now advise on."
 ) + header("about.html") + `
 <section class="hero hero-sm on-navy">
-  <div class="art">${ART_CONTOURS}</div>
+  ${heroPhoto("aerial-crushing-plant", "Crushing and screening plant from the air")}
   <div class="wrap hero-in">
     <p class="eyebrow" data-r>About Confluent Group</p>
     <h1 class="h-display" data-r data-d="1">Senior leadership with direct delivery accountability.</h1>
@@ -468,7 +513,7 @@ const mining = head(
   "Mining operations and optimisation, and crushing and processing advisory — from directors who have overseen production, maintenance and crushing operations at South Australia's largest open cut miner."
 ) + header("mining.html") + `
 <section class="hero hero-sm on-navy">
-  <div class="art">${ART_BENCHES}</div>
+  ${heroPhoto("aerial-benches", "Open cut mining benches from the air")}
   <div class="wrap hero-in">
     <p class="eyebrow" data-r>Sector — Mining</p>
     <h1 class="h-display" data-r data-d="1">From pit to processing.</h1>
@@ -522,13 +567,13 @@ const mining = head(
         "Pit design review, bench sequencing and strip ratio optimisation",
         "Drill and blast oversight, grade control and ROM feed planning",
         "Fleet productivity and haulage cycle optimisation",
-      ])}
+      ], 0, "aerial-pit-wide")}
       ${proj("Crushing &amp; Processing", "ROM Wall &amp; Fixed Plant", [
         "ROM wall construction and fixed crushing plant installation",
         "Platform earthworks, retaining structures and pad preparation",
         "Structural, mechanical and conveyor installation oversight",
         "Commissioning support and production ramp-up",
-      ], 1)}
+      ], 1, "aerial-crushing-plant")}
     </div>
   </div>
 </section>
@@ -543,7 +588,7 @@ const civil = head(
   "Civil infrastructure delivery and project & construction management — earthworks, structures, drainage and pavements with production discipline and commercial controls proven in Tier 1 environments."
 ) + header("civil.html") + `
 <section class="hero hero-sm on-navy">
-  <div class="art">${ART_ROAD}</div>
+  ${heroPhoto("civil-boom-pump", "Concrete boom pump pour on a civil site")}
   <div class="wrap hero-in">
     <p class="eyebrow" data-r>Sector — Civil Infrastructure</p>
     <h1 class="h-display" data-r data-d="1">Civil infrastructure, delivered end to end.</h1>
@@ -601,22 +646,22 @@ const civil = head(
         "Intersection upgrade on a remote state-controlled highway corridor",
         "Pavement design, line-marking, signage and safety barriers",
         "Traffic management and staged construction under live traffic",
-      ])}
+      ], 0, "civil-pour-crew")}
       ${proj("Rail Construction", "Bulk &amp; Detailed Earthworks", [
         "Topsoil management and rehabilitation in culturally and environmentally sensitive locations",
         "Mass haul optimisation and material management",
         "Management of self-performed and subcontracted works",
-      ], 1)}
+      ], 1, "aerial-haul-roads")}
       ${proj("Concrete Construction", "Structural Concrete", [
         "Coordination of formwork, reinforcement and concrete works",
         "Complex structural cast-in and post-tensioned works",
         "Temporary works planning, oversight and delivery",
-      ])}
+      ], 0, "civil-wall-pour")}
       ${proj("Haul Road Structures", "Bridges &amp; Overpasses", [
         "Advanced staging accelerating operational readiness with minimal disruption",
         "Management of piling, concrete, earthwork, pavement and sealing works",
         "Procurement of international structural steel and local precast elements",
-      ], 1)}
+      ], 1, "pit-excavator-truck")}
     </div>
   </div>
 </section>
@@ -631,7 +676,7 @@ const advisory = head(
   "MSA negotiation, contract strategy, margin protection and dispute resolution at scale — plus constructability and program management from people who have delivered in Tier 1 environments."
 ) + header("advisory.html") + `
 <section class="hero hero-sm on-navy">
-  <div class="art">${ART_PROGRAM}</div>
+  ${heroPhoto("civil-site-crane", "Civil works site with crane")}
   <div class="wrap hero-in">
     <p class="eyebrow" data-r>Commercial &amp; Advisory</p>
     <h1 class="h-display" data-r data-d="1">Commercial strength, at the table.</h1>
@@ -693,11 +738,11 @@ const projects = head(
   "Representative project exposure across civil infrastructure and open cut mining — delivery, commercial and operational outcomes on projects of this type and scale in Tier 1 environments."
 ) + header("projects.html") + `
 <section class="hero hero-sm on-navy">
-  <div class="art">${ART_GRID}</div>
+  ${heroPhoto("aerial-haul-roads", "Haul roads and pit walls from the air")}
   <div class="wrap hero-in">
     <p class="eyebrow" data-r>Project experience</p>
     <h1 class="h-display" data-r data-d="1">Work of this type and scale.</h1>
-    <p class="lede" data-r data-d="2">Representative project exposure across civil infrastructure and open cut mining. Our directors have led delivery, commercial and operational outcomes on projects of this type and scale in Tier&nbsp;1 environments.</p>
+    <p class="lede" data-r data-d="2">Confluent Group is built on the Tier&nbsp;1 delivery discipline of its founders. The projects below reflect the portfolio our directors delivered in senior roles with Tier&nbsp;1 contractors and resource owners, prior to founding Confluent Group.</p>
   </div>
 </section>
 
@@ -709,53 +754,53 @@ const projects = head(
         "Pavement design, line-marking, signage and safety barriers",
         "Traffic management and staged construction under live traffic",
         "Earthworks, drainage and asphalt wearing course",
-      ])}
+      ], 0, "civil-pour-crew")}
       ${proj("Mining Operations", "Open Cut Pit Development", [
         "Multi-bench open cut development and production management",
         "Pit design review, bench sequencing and strip ratio optimisation",
         "Drill and blast oversight, grade control and ROM feed planning",
         "Fleet productivity and haulage cycle optimisation",
-      ], 1)}
+      ], 1, "aerial-pit-wide")}
       ${proj("Crushing &amp; Processing", "ROM Wall &amp; Fixed Plant", [
         "ROM wall construction and fixed crushing plant installation",
         "Platform earthworks, retaining structures and pad preparation",
         "Structural, mechanical and conveyor installation oversight",
         "Commissioning support and production ramp-up",
-      ])}
+      ], 0, "aerial-crushing-plant")}
       ${proj("Project Management", "Site Establishment &amp; Facilities", [
         "Site establishment including workshops, offices and laydown",
         "Heavy vehicle hardstands, fuel farm and wash-down facilities",
         "Services reticulation, power distribution and communications",
         "Fencing, bunding and environmental controls",
-      ], 1)}
+      ], 1, "civil-site-crane")}
       ${proj("Rail Construction", "Bulk &amp; Detailed Earthworks", [
         "Topsoil management and rehabilitation in culturally and environmentally sensitive locations",
         "Mass haul optimisation and material management",
         "CSP culvert procurement and installation",
         "Construction water assessment and management",
         "Management of self-performed and subcontracted works",
-      ])}
+      ], 0, "aerial-haul-roads")}
       ${proj("Concrete Construction", "Structural Concrete", [
         "Detailed construction staging and program management",
         "Coordination of formwork, reinforcement and concrete works",
         "Temporary works planning, oversight and delivery",
         "Complex structural cast-in and post-tensioned works",
         "Crew availability and utilisation optimisation",
-      ], 1)}
+      ], 1, "civil-wall-pour")}
       ${proj("Water Infrastructure", "Regulator &amp; Fishway Structures", [
         "Piling works, including precast driven and sheet piles for temporary and permanent applications",
         "Groundwater management, testing, treatment and discharge within strict EPA limitations",
         "Detailed project sequencing and construction",
         "Concrete works and structural steel fit-out",
         "Mechanical commissioning and testing",
-      ])}
+      ], 0, "civil-culvert-strip")}
       ${proj("Haul Road Structures", "Bridges &amp; Overpasses", [
         "Advanced staging accelerating operational readiness with minimal disruption",
         "Remote concrete batch plant management",
         "Procurement of international structural steel and local precast elements",
         "Management of piling, concrete, earthwork, pavement and sealing works",
         "Stakeholder management and communication",
-      ], 1)}
+      ], 1, "pit-excavator-truck")}
     </div>
   </div>
 </section>
@@ -771,7 +816,7 @@ const contact = head(
   "Start a conversation with Confluent Group — a South Australian civil and mining consultancy. Advisory, embedded leadership or end-to-end delivery."
 ) + header("contact.html") + `
 <section class="hero hero-sm on-navy">
-  <div class="art">${ART_CONTOURS}</div>
+  ${heroPhoto("ponds-aerial", "Evaporation ponds under a wide sky")}
   <div class="wrap hero-in">
     <p class="eyebrow" data-r>Contact</p>
     <h1 class="h-display" data-r data-d="1">Start a conversation.</h1>
@@ -823,7 +868,7 @@ const careers = head(
   "Careers with Confluent Group — experienced project managers and engineers for civil and mining delivery, Adelaide, South Australia. Advertised positions and expressions of interest."
 ) + header("careers.html") + `
 <section class="hero hero-sm on-navy">
-  <div class="art">${ART_PROGRAM}</div>
+  ${heroPhoto("civil-formwork-crew", "Crew working on structural formwork")}
   <div class="wrap hero-in">
     <p class="eyebrow" data-r>Careers</p>
     <h1 class="h-display" data-r data-d="1">Careers built on delivery.</h1>
