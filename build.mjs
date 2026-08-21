@@ -1,6 +1,6 @@
-// Confluent Group concept — page generator (MP Launch, 2026-08-15)
+// Confluent Group concept, page generator (MP Launch, 2026-08-15)
 // node build.mjs  → emits 8 static pages sharing one chrome.
-// EVERY factual claim traces to the client's capability statement or email —
+// EVERY factual claim traces to the client's capability statement or email 
 // see "claims-source table" in the prospect folder's 00-pitch-pack.md.
 import { writeFileSync } from "node:fs";
 
@@ -138,8 +138,8 @@ ${extra}</head>
 const header = (current) => `
 <header class="hdr">
   <div class="wrap hdr-in">
-    <a class="lockup" href="index.html" aria-label="Confluent Group — home">
-      <span class="l1">CONFLUENT</span><span class="l2">GROUP</span>
+    <a class="lockup" href="index.html" aria-label="Confluent Group, home">
+      <img src="assets/brand/logo-wide-white.png" alt="Confluent Group" width="1000" height="199">
     </a>
     <input type="checkbox" id="nav-t" aria-hidden="true">
     <label class="burger" for="nav-t" aria-label="Menu"><span></span><span></span><span></span></label>
@@ -163,7 +163,7 @@ const ctaBand = (h, sub) => `
       </div>
       <div class="cta-actions" data-r data-d="1">
         <a class="btn btn-light" href="mailto:info@confluentgroup.com.au">info@confluentgroup.com.au</a>
-        <a class="btn btn-ghost" href="tel:+61425014666">0425 014 666</a>
+        
       </div>
     </div>
     <div class="cta-form" data-r data-d="1">
@@ -184,8 +184,8 @@ const footer = `
 <footer class="ftr">
   <div class="wrap ftr-in">
     <div>
-      <a class="lockup" href="index.html"><span class="l1">CONFLUENT</span><span class="l2">GROUP</span></a>
-      <p class="about">A South Australian civil and mining consultancy with delivery capability — partnering with Tier&nbsp;1 contractors, resource owners and government.</p>
+      <a class="lockup" href="index.html"><img src="assets/brand/logo-wide-white.png" alt="Confluent Group" width="1000" height="199"></a>
+      <p class="about">A South Australian civil and mining consultancy with delivery capability, partnering with Tier&nbsp;1 contractors, resource owners and government.</p>
     </div>
     <div>
       <h4>Explore</h4>
@@ -211,7 +211,7 @@ const footer = `
       <h4>Contact</h4>
       <ul>
         <li><a href="mailto:info@confluentgroup.com.au">info@confluentgroup.com.au</a></li>
-        <li><a href="tel:+61425014666">0425 014 666</a></li>
+        
         <li><span class="plain">Adelaide, South Australia</span></li>
       </ul>
     </div>
@@ -228,7 +228,7 @@ const footer = `
   if(navigator.webdriver)return;
   var v=new URLSearchParams(location.search).get('v');
   if(!v)return;
-  var slug="confluent-group-preview", label="Michael — Confluent Group", phone="+61425014666";
+  var slug="confluent-group-preview", label="Michael, Confluent Group", phone="+61425014666";
   var k="mpl_seen_"+slug, last=+localStorage.getItem(k)||0;
   if(Date.now()-last<432e5)return;
   var fired=false,dwell=0,t=null;
@@ -255,18 +255,17 @@ const footer = `
 /* ---------- reusable content blocks ---------- */
 const MODELS = `
 <div class="grid3">
-  <div class="card model" data-r><span class="tag">ADVISORY</span><h3>Scoped studies, audits, commercial reviews</h3><p class="d">A defined question, answered with delivery-grade rigour — then handed back.</p></div>
+  <div class="card model" data-r><span class="tag">ADVISORY</span><h3>Scoped studies, audits, commercial reviews</h3><p class="d">A defined question, answered with delivery-grade rigour, then handed back.</p></div>
   <div class="card model" data-r data-d="1"><span class="tag">EMBEDDED</span><h3>Interim leadership and project management</h3><p class="d">Senior capability inside your team for the phase that needs it.</p></div>
   <div class="card model" data-r data-d="2"><span class="tag">DELIVERY</span><h3>End-to-end project execution and oversight</h3><p class="d">Accountability for the outcome, from planning through to handover.</p></div>
 </div>`;
 
 const STATS = `
 <section class="stats on-navy">
-  <p class="stats-kicker wrap">Our directors' combined record in Tier&nbsp;1 environments</p>
   <div class="wrap stats-in">
     <div class="stat" data-r><span class="n">25+</span><span class="l">Years combined</span></div>
     <div class="stat" data-r data-d="1"><span class="n">$500M+</span><span class="l">Projects delivered</span></div>
-    <div class="stat" data-r data-d="2"><span class="n">Tier 1</span><span class="l">Contractor lineage</span></div>
+    <div class="stat" data-r data-d="2"><span class="n">Tier 1</span><span class="l">Experience</span></div>
     <div class="stat" data-r data-d="3"><span class="n">SA</span><span class="l">National reach</span></div>
   </div>
 </section>`;
@@ -285,17 +284,17 @@ const proj = (tag, title, items, d = 0, img = "") => `
    PAGE: index.html
    ================================================================ */
 const home = head(
-  "Confluent Group — Civil &amp; Mining Consultancy | Adelaide, South Australia",
+  "Confluent Group, Civil &amp; Mining Consultancy | Adelaide, South Australia",
   "South Australian civil and mining consultancy with delivery capability. We partner with Tier 1 contractors, resource owners and government to plan, commercialise and execute complex projects end to end.",
   `<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"Confluent Group","legalName":"Confluent Group Pty Ltd","url":"https://confluentgroup.com.au","email":"info@confluentgroup.com.au","telephone":"+61425014666","address":{"@type":"PostalAddress","addressLocality":"Adelaide","addressRegion":"SA","addressCountry":"AU"},"description":"South Australian civil and mining consultancy with delivery capability, partnering with Tier 1 contractors, resource owners and government.","knowsAbout":["Mining Operations & Optimisation","Crushing & Processing Advisory","Civil Infrastructure Delivery","Project & Construction Management","Commercial & Contract Advisory","Constructability & Program Management"]}
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Confluent Group","legalName":"Confluent Group Pty Ltd","url":"https://confluentgroup.com.au","email":"info@confluentgroup.com.au","address":{"@type":"PostalAddress","addressLocality":"Adelaide","addressRegion":"SA","addressCountry":"AU"},"description":"South Australian civil and mining consultancy with delivery capability, partnering with Tier 1 contractors, resource owners and government.","knowsAbout":["Mining Operations & Optimisation","Crushing & Processing Advisory","Civil Infrastructure Delivery","Project & Construction Management","Commercial & Contract Advisory","Constructability & Program Management"]}
 </script>
 `
 ) + header("index.html") + `
 <section class="hero on-navy">
   ${heroPhoto("aerial-pit-wide", "Aerial view over open cut mining operations")}
   <div class="wrap hero-in">
-    <p class="eyebrow" data-r>Civil &amp; mining consultancy — Adelaide, South Australia</p>
+    <p class="eyebrow" data-r>Civil &amp; mining consultancy, Adelaide, South Australia</p>
     <h1 class="h-display" data-r data-d="1">Proven civil and mining delivery.</h1>
     <p class="lede" data-r data-d="2">Partnering with Tier&nbsp;1 contractors, resource owners and government to plan, commercialise and execute complex projects end to end.</p>
     <div class="cta-row" data-r data-d="3">
@@ -329,7 +328,7 @@ ${STATS}
       </a>
       <a class="pcard" href="civil.html" data-r data-d="2">
         <div class="im">${pic("civil-boom-pump", "Concrete boom pump pour on a civil site")}</div>
-        <div class="tx"><h3>Civil Infrastructure Delivery</h3><p>Earthworks, structures, drainage and pavements — including live-traffic staging.</p><span class="go">Explore civil <span class="arr">&rarr;</span></span></div>
+        <div class="tx"><h3>Civil Infrastructure Delivery</h3><p>Earthworks, structures, drainage and pavements, including live-traffic staging.</p><span class="go">Explore civil <span class="arr">&rarr;</span></span></div>
       </a>
       <a class="pcard" href="civil.html" data-r>
         <div class="im">${pic("civil-culvert-strip", "Structural concrete works in progress")}</div>
@@ -365,10 +364,10 @@ ${STATS}
     <div class="dir">
       <div class="card dir-card" data-r>
         <img class="headshot" src="assets/morgan-taylor.jpg" alt="Morgan Taylor" width="512" height="512" loading="lazy" decoding="async">
-        <span class="role">Director &middot; Mining &amp; Commercial</span>
+        <span class="role">Director</span>
         <h3>Morgan Taylor</h3>
         <p class="cred">MBA</p>
-        <p class="bio">Senior executive experience at South Australia's largest open cut miner — overseeing production, maintenance and crushing operations — with delivery lead experience on Tier&nbsp;1 infrastructure.</p>
+        <p class="bio">Senior executive experience at South Australia's largest open cut miner, overseeing production, maintenance and crushing operations, with delivery lead experience on Tier&nbsp;1 infrastructure.</p>
         <ul class="str">
           <li>Commercial and operational integration</li>
           <li>MSA negotiation and contract strategy</li>
@@ -377,10 +376,10 @@ ${STATS}
       </div>
       <div class="card dir-card" data-r data-d="1">
         <img class="headshot" src="assets/michael-pastore.jpg" alt="Michael Pastore" width="512" height="512" loading="lazy" decoding="async">
-        <span class="role">Director &middot; Construction</span>
+        <span class="role">Director</span>
         <h3>Michael Pastore</h3>
-        <p class="cred">BEng (Hons) &middot; Building Work Supervisor — Civil Construction (BLD 321368)</p>
-        <p class="bio">Civil construction specialist with delivery experience across contractor environments from Tier&nbsp;1 to Tier&nbsp;3 — earthworks, structures, mining, defence and infrastructure projects.</p>
+        <p class="cred">BEng (Hons) &middot; Building Work Supervisor, Civil Construction (BLD 321368)</p>
+        <p class="bio">Civil construction specialist with delivery experience across contractor environments from Tier&nbsp;1 to Tier&nbsp;3, covering earthworks, structures, mining, defence and infrastructure projects.</p>
         <ul class="str">
           <li>Large-scale civil earthworks and infrastructure delivery</li>
           <li>Subcontractor and supplier management</li>
@@ -396,7 +395,7 @@ ${STATS}
     <div class="sec-head"><div data-r><p class="eyebrow">Sectors</p><h2 class="h-sec">Where we work.</h2></div></div>
     <div class="sectors">
       <div class="sector" data-r>MINING<small>Open cut operations, crushing and processing for resource owners and operators.</small></div>
-      <div class="sector" data-r data-d="1">CIVIL&nbsp;INFRASTRUCTURE<small>Roads, rail, water and structures — delivered with Tier&nbsp;1 discipline.</small></div>
+      <div class="sector" data-r data-d="1">CIVIL&nbsp;INFRASTRUCTURE<small>Roads, rail, water and structures, delivered with Tier&nbsp;1 discipline.</small></div>
       <div class="sector" data-r data-d="2">DEFENCE<small>Delivery lineage across DIT and Defence-adjacent civils, with Defence-ready governance.</small></div>
     </div>
   </div>
@@ -410,23 +409,23 @@ ${STATS}
 </section>
 
 <section class="band-photo">
-  ${pic("civil-formwork-crew", "Crew working on structural formwork")}
+  ${pic("structure-aerial", "Major concrete structure under construction, from the air")}
   <div class="wrap">
     <p class="eyebrow" data-r>Careers</p>
-    <h2 data-r data-d="1">Experienced engineers and project managers — register your interest.</h2>
+    <h2 data-r data-d="1">Experienced engineers and project managers, register your interest.</h2>
     <a class="go2" href="careers.html" data-r data-d="2">Careers at Confluent <span class="arr">&rarr;</span></a>
   </div>
 </section>
 
-${ctaBand("Let's talk about your next project.", "Advisory, embedded or end-to-end delivery — engagement scoped to the project in front of you.")}
+${ctaBand("Let's talk about your next project.", "Advisory, embedded or end-to-end delivery, engagement scoped to the project in front of you.")}
 ${footer}`;
 
 /* ================================================================
    PAGE: about.html
    ================================================================ */
 const about = head(
-  "About — Confluent Group | Civil &amp; Mining Consultancy, Adelaide",
-  "Senior leadership with direct delivery accountability. Meet the directors of Confluent Group — credentialled advisors who have led the projects, plants and contracts they now advise on."
+  "About, Confluent Group | Civil &amp; Mining Consultancy, Adelaide",
+  "Senior leadership with direct delivery accountability. Meet the directors of Confluent Group, credentialled advisors who have led the projects, plants and contracts they now advise on."
 ) + header("about.html") + `
 <section class="hero hero-sm on-navy">
   ${heroPhoto("aerial-crushing-plant", "Crushing and screening plant from the air")}
@@ -454,10 +453,10 @@ const about = head(
     <div class="dir">
       <div class="card dir-card" data-r>
         <img class="headshot" src="assets/morgan-taylor.jpg" alt="Morgan Taylor" width="512" height="512" loading="lazy" decoding="async">
-        <span class="role">Director &middot; Mining &amp; Commercial</span>
+        <span class="role">Director</span>
         <h3>Morgan Taylor</h3>
         <p class="cred">MBA</p>
-        <p class="bio">A career path spanning Defence, civil infrastructure, processing and open cut mining. Senior executive experience at South Australia's largest open cut miner — overseeing production, maintenance and crushing operations. Founder of a South Australian crushing and screening business, with delivery lead experience on Tier&nbsp;1 infrastructure.</p>
+        <p class="bio">A career path spanning Defence, civil infrastructure, processing and open cut mining. Senior executive experience at South Australia's largest open cut miner, overseeing production, maintenance and crushing operations. Founder of a South Australian crushing and screening business, with delivery lead experience on Tier&nbsp;1 infrastructure.</p>
         <ul class="str">
           <li>Commercial and operational integration</li>
           <li>MSA negotiation and contract strategy</li>
@@ -468,9 +467,9 @@ const about = head(
       </div>
       <div class="card dir-card" data-r data-d="1">
         <img class="headshot" src="assets/michael-pastore.jpg" alt="Michael Pastore" width="512" height="512" loading="lazy" decoding="async">
-        <span class="role">Director &middot; Construction</span>
+        <span class="role">Director</span>
         <h3>Michael Pastore</h3>
-        <p class="cred">BEng (Hons) &middot; Building Work Supervisor — Civil Construction (BLD 321368)</p>
+        <p class="cred">BEng (Hons) &middot; Building Work Supervisor, Civil Construction (BLD 321368)</p>
         <p class="bio">Civil construction specialist with delivery experience across contractor environments ranging from Tier&nbsp;1 to Tier&nbsp;3. A proven track record across earthworks, structures, mining, defence and infrastructure projects.</p>
         <ul class="str">
           <li>Large-scale civil earthworks and infrastructure delivery</li>
@@ -502,22 +501,22 @@ ${STATS}
     ${MODELS}
   </div>
 </section>
-${ctaBand("Talk directly to a director.", "No account managers, no hand-offs — the people on this page are the people on your project.")}
+${ctaBand("Talk directly to a director.", "No account managers, no hand-offs, the people on this page are the people on your project.")}
 ${footer}`;
 
 /* ================================================================
    PAGE: mining.html
    ================================================================ */
 const mining = head(
-  "Mining Operations &amp; Processing Advisory — Confluent Group",
-  "Mining operations and optimisation, and crushing and processing advisory — from directors who have overseen production, maintenance and crushing operations at South Australia's largest open cut miner."
+  "Mining Operations &amp; Processing Advisory, Confluent Group",
+  "Mining operations and optimisation, and crushing and processing advisory, from directors who have overseen production, maintenance and crushing operations at South Australia's largest open cut miner."
 ) + header("mining.html") + `
 <section class="hero hero-sm on-navy">
   ${heroPhoto("aerial-benches", "Open cut mining benches from the air")}
   <div class="wrap hero-in">
-    <p class="eyebrow" data-r>Sector — Mining</p>
+    <p class="eyebrow" data-r>Sector, Mining</p>
     <h1 class="h-display" data-r data-d="1">From pit to processing.</h1>
-    <p class="lede" data-r data-d="2">Mining operations and optimisation, and crushing and processing advisory — led by a director with senior executive experience overseeing production, maintenance and crushing operations at South Australia's largest open cut miner.</p>
+    <p class="lede" data-r data-d="2">Mining operations and optimisation, and crushing and processing advisory, led by a director with senior executive experience overseeing production, maintenance and crushing operations at South Australia's largest open cut miner.</p>
     <div class="cta-row" data-r data-d="3">
       <a class="btn btn-light" href="contact.html">Discuss your operation <span class="arr">&rarr;</span></a>
       <a class="btn btn-ghost" href="projects.html">Representative experience</a>
@@ -531,7 +530,7 @@ const mining = head(
       <div data-r>
         <span class="num">01</span>
         <h3>Mining Operations &amp; Optimisation</h3>
-        <p class="lead-line">Production systems that hold up shift after shift — and the commercial discipline to know what each improvement is worth.</p>
+        <p class="lead-line">Production systems that hold up shift after shift, and the commercial discipline to know what each improvement is worth.</p>
       </div>
       <ul class="svc-list" data-r data-d="1">
         <li>Multi-bench open cut development and production management</li>
@@ -545,7 +544,7 @@ const mining = head(
       <div data-r>
         <span class="num">02</span>
         <h3>Crushing &amp; Processing Advisory</h3>
-        <p class="lead-line">Advisory grounded in having run crushing operations — and in having founded and built a South Australian crushing and screening business.</p>
+        <p class="lead-line">Advisory grounded in having run crushing operations, and in having founded and built a South Australian crushing and screening business.</p>
       </div>
       <ul class="svc-list" data-r data-d="1">
         <li>ROM wall construction and fixed crushing plant installation</li>
@@ -577,22 +576,22 @@ const mining = head(
     </div>
   </div>
 </section>
-${ctaBand("Talk to us about your operation.", "Scoped studies, embedded leadership or end-to-end oversight — whatever the pit or the plant needs.")}
+${ctaBand("Talk to us about your operation.", "Scoped studies, embedded leadership or end-to-end oversight, whatever the pit or the plant needs.")}
 ${footer}`;
 
 /* ================================================================
    PAGE: civil.html
    ================================================================ */
 const civil = head(
-  "Civil Infrastructure Delivery &amp; Construction Management — Confluent Group",
-  "Civil infrastructure delivery and project & construction management — earthworks, structures, drainage and pavements with production discipline and commercial controls proven in Tier 1 environments."
+  "Civil Infrastructure Delivery &amp; Construction Management, Confluent Group",
+  "Civil infrastructure delivery and project & construction management, earthworks, structures, drainage and pavements with production discipline and commercial controls proven in Tier 1 environments."
 ) + header("civil.html") + `
 <section class="hero hero-sm on-navy">
   ${heroPhoto("civil-boom-pump", "Concrete boom pump pour on a civil site")}
   <div class="wrap hero-in">
-    <p class="eyebrow" data-r>Sector — Civil Infrastructure</p>
+    <p class="eyebrow" data-r>Sector, Civil Infrastructure</p>
     <h1 class="h-display" data-r data-d="1">Civil infrastructure, delivered end to end.</h1>
-    <p class="lede" data-r data-d="2">Delivery and construction management across earthworks, structures, drainage and pavements — with production discipline and commercial controls proven in Tier&nbsp;1 environments, from roads and rail to water infrastructure.</p>
+    <p class="lede" data-r data-d="2">Delivery and construction management across earthworks, structures, drainage and pavements, with production discipline and commercial controls proven in Tier&nbsp;1 environments, from roads and rail to water infrastructure.</p>
     <div class="cta-row" data-r data-d="3">
       <a class="btn btn-light" href="contact.html">Discuss your project <span class="arr">&rarr;</span></a>
       <a class="btn btn-ghost" href="projects.html">Representative experience</a>
@@ -606,7 +605,7 @@ const civil = head(
       <div data-r>
         <span class="num">03</span>
         <h3>Civil Infrastructure Delivery</h3>
-        <p class="lead-line">Large-scale civil earthworks and infrastructure delivery — including staged construction under live traffic on state-controlled corridors.</p>
+        <p class="lead-line">Large-scale civil earthworks and infrastructure delivery, including staged construction under live traffic on state-controlled corridors.</p>
       </div>
       <ul class="svc-list" data-r data-d="1">
         <li>Bulk and detailed earthworks, mass haul optimisation and material management</li>
@@ -620,14 +619,14 @@ const civil = head(
       <div data-r>
         <span class="num">04</span>
         <h3>Project &amp; Construction Management</h3>
-        <p class="lead-line">The management layer that keeps a job moving — staging, program, temporary works and the interfaces between crews, subcontractors and suppliers.</p>
+        <p class="lead-line">The management layer that keeps a job moving, staging, program, temporary works and the interfaces between crews, subcontractors and suppliers.</p>
       </div>
       <ul class="svc-list" data-r data-d="1">
         <li>Detailed construction staging and program management</li>
         <li>Subcontractor and supplier management</li>
         <li>Management of self-performed and subcontracted works</li>
         <li>Temporary works planning, oversight and delivery</li>
-        <li>Site establishment — workshops, offices, laydown, hardstands and services reticulation</li>
+        <li>Site establishment, workshops, offices, laydown, hardstands and services reticulation</li>
         <li>Stakeholder management and communication</li>
       </ul>
     </div>
@@ -665,22 +664,22 @@ const civil = head(
     </div>
   </div>
 </section>
-${ctaBand("Bring delivery discipline to your next job.", "From site establishment to handover — advisory, embedded or full delivery oversight.")}
+${ctaBand("Bring delivery discipline to your next job.", "From site establishment to handover, advisory, embedded or full delivery oversight.")}
 ${footer}`;
 
 /* ================================================================
    PAGE: advisory.html
    ================================================================ */
 const advisory = head(
-  "Commercial &amp; Contract Advisory — Confluent Group",
-  "MSA negotiation, contract strategy, margin protection and dispute resolution at scale — plus constructability and program management from people who have delivered in Tier 1 environments."
+  "Commercial &amp; Contract Advisory, Confluent Group",
+  "MSA negotiation, contract strategy, margin protection and dispute resolution at scale, plus constructability and program management from people who have delivered in Tier 1 environments."
 ) + header("advisory.html") + `
 <section class="hero hero-sm on-navy">
   ${heroPhoto("civil-site-crane", "Civil works site with crane")}
   <div class="wrap hero-in">
     <p class="eyebrow" data-r>Commercial &amp; Advisory</p>
     <h1 class="h-display" data-r data-d="1">Commercial strength, at the table.</h1>
-    <p class="lede" data-r data-d="2">MSA negotiation, contract strategy, margin protection and dispute resolution at scale — backed by constructability and program management from people who have carried delivery accountability themselves.</p>
+    <p class="lede" data-r data-d="2">MSA negotiation, contract strategy, margin protection and dispute resolution at scale, backed by constructability and program management from people who have carried delivery accountability themselves.</p>
     <div class="cta-row" data-r data-d="3">
       <a class="btn btn-light" href="contact.html">Get a commercial review <span class="arr">&rarr;</span></a>
       <a class="btn btn-ghost" href="about.html">Meet the directors</a>
@@ -708,7 +707,7 @@ const advisory = head(
       <div data-r>
         <span class="num">06</span>
         <h3>Constructability &amp; Program Management</h3>
-        <p class="lead-line">Plans that survive contact with site — sequencing, staging and governance built from delivery experience, not theory.</p>
+        <p class="lead-line">Plans that survive contact with site, sequencing, staging and governance built from delivery experience, not theory.</p>
       </div>
       <ul class="svc-list" data-r data-d="1">
         <li>Constructability review and detailed project sequencing</li>
@@ -727,15 +726,15 @@ const advisory = head(
     ${MODELS}
   </div>
 </section>
-${ctaBand("Put a delivery mind on your commercial problem.", "Scoped commercial reviews, contract strategy or embedded leadership — talk it through with a director.")}
+${ctaBand("Put a delivery mind on your commercial problem.", "Scoped commercial reviews, contract strategy or embedded leadership, talk it through with a director.")}
 ${footer}`;
 
 /* ================================================================
    PAGE: projects.html
    ================================================================ */
 const projects = head(
-  "Project Experience — Confluent Group",
-  "Representative project exposure across civil infrastructure and open cut mining — delivery, commercial and operational outcomes on projects of this type and scale in Tier 1 environments."
+  "Project Experience, Confluent Group",
+  "Representative project exposure across civil infrastructure and open cut mining, delivery, commercial and operational outcomes on projects of this type and scale in Tier 1 environments."
 ) + header("projects.html") + `
 <section class="hero hero-sm on-navy">
   ${heroPhoto("aerial-haul-roads", "Haul roads and pit walls from the air")}
@@ -812,15 +811,15 @@ ${footer}`;
    PAGE: contact.html
    ================================================================ */
 const contact = head(
-  "Contact — Confluent Group | Adelaide, South Australia",
-  "Start a conversation with Confluent Group — a South Australian civil and mining consultancy. Advisory, embedded leadership or end-to-end delivery."
+  "Contact, Confluent Group | Adelaide, South Australia",
+  "Start a conversation with Confluent Group, a South Australian civil and mining consultancy. Advisory, embedded leadership or end-to-end delivery."
 ) + header("contact.html") + `
 <section class="hero hero-sm on-navy">
   ${heroPhoto("ponds-aerial", "Evaporation ponds under a wide sky")}
   <div class="wrap hero-in">
     <p class="eyebrow" data-r>Contact</p>
     <h1 class="h-display" data-r data-d="1">Start a conversation.</h1>
-    <p class="lede" data-r data-d="2">Tell us about the project, the plant or the contract in front of you — a director will come back to you directly.</p>
+    <p class="lede" data-r data-d="2">Tell us about the project, the plant or the contract in front of you, a director will come back to you directly.</p>
   </div>
 </section>
 
@@ -830,7 +829,7 @@ const contact = head(
       <p class="eyebrow">Direct</p>
       <h2 class="h-sub">You deal with a director from the first call.</h2>
       <div class="c-line"><span class="k">Email</span><a href="mailto:info@confluentgroup.com.au">info@confluentgroup.com.au</a></div>
-      <div class="c-line"><span class="k">Phone</span><a href="tel:+61425014666">0425 014 666</a></div>
+      
       <div class="c-line"><span class="k">Location</span><span class="plain">Adelaide, South Australia &middot; national reach</span></div>
       <div class="c-line"><span class="k">Engagement</span><span class="plain">Advisory &middot; Embedded &middot; Delivery</span></div>
     </div>
@@ -844,35 +843,35 @@ const contact = head(
         <div class="f-field"><label for="f-phone">Phone</label><input id="f-phone" type="tel" autocomplete="tel"></div>
       </div>
       <div class="f-field"><label for="f-model">How would you bring us in?</label>
-        <select id="f-model"><option>Not sure yet</option><option>Advisory — a scoped study or review</option><option>Embedded — interim leadership or PM</option><option>Delivery — end-to-end execution</option></select>
+        <select id="f-model"><option>Not sure yet</option><option>Advisory, a scoped study or review</option><option>Embedded, interim leadership or PM</option><option>Delivery, end-to-end execution</option></select>
       </div>
       <div class="f-field"><label for="f-msg">The project in front of you</label><textarea id="f-msg" rows="4"></textarea></div>
       <a class="btn btn-solid" href="mailto:info@confluentgroup.com.au?subject=Project%20enquiry%20%E2%80%94%20via%20confluentgroup.com.au">Send enquiry <span class="arr">&rarr;</span></a>
-      <p class="fnote">Concept note: on the live site this form delivers straight to your inbox with spam protection — shown here as a design preview.</p>
+      <p class="fnote">Concept note: on the live site this form delivers straight to your inbox with spam protection, shown here as a design preview.</p>
     </div>
   </div>
 </section>
-${ctaBand("Prefer email?", "Send through the project, the tender or the question — we'll come back to you directly.")}
+${ctaBand("Prefer email?", "Send through the project, the tender or the question, we'll come back to you directly.")}
 ${footer}`;
 
 /* ================================================================
    PAGE: careers.html
-   Sourced: Michael's 2026-08-16 email — "host an open avenue for
+   Sourced: Michael's 2026-08-16 email, "host an open avenue for
    engineers / project managers to apply for advertised positions",
    "aim is to grow and bring on additional project managers / engineers".
-   The role card is a clearly-labelled EXAMPLE (design preview) — no real
+   The role card is a clearly-labelled EXAMPLE (design preview), no real
    listing exists yet, so none is claimed.
    ================================================================ */
 const careers = head(
-  "Careers — Confluent Group | Project Managers &amp; Engineers",
-  "Careers with Confluent Group — experienced project managers and engineers for civil and mining delivery, Adelaide, South Australia. Advertised positions and expressions of interest."
+  "Careers, Confluent Group | Project Managers &amp; Engineers",
+  "Careers with Confluent Group, experienced project managers and engineers for civil and mining delivery, Adelaide, South Australia. Advertised positions and expressions of interest."
 ) + header("careers.html") + `
 <section class="hero hero-sm on-navy">
-  ${heroPhoto("civil-formwork-crew", "Crew working on structural formwork")}
+  ${heroPhoto("structure-aerial", "Major concrete structure under construction, from the air")}
   <div class="wrap hero-in">
     <p class="eyebrow" data-r>Careers</p>
     <h1 class="h-display" data-r data-d="1">Careers built on delivery.</h1>
-    <p class="lede" data-r data-d="2">Confluent Group is growing — bringing experienced project managers and engineers into civil and mining delivery. Advertised positions are posted on this page; when nothing is open, register your interest and a director will come back to you directly.</p>
+    <p class="lede" data-r data-d="2">Confluent Group is growing, bringing experienced project managers and engineers into civil and mining delivery. Advertised positions are posted on this page; when nothing is open, register your interest and a director will come back to you directly.</p>
     <div class="cta-row" data-r data-d="3">
       <a class="btn btn-light" href="#register">Register your interest <span class="arr">&rarr;</span></a>
       <a class="btn btn-ghost" href="about.html">Meet the directors</a>
@@ -886,19 +885,19 @@ const careers = head(
     <div class="grid2">
       <div class="card" data-r>
         <h3>No positions are currently advertised.</h3>
-        <p class="d">New roles are posted here as they open. Register your interest below — when a role fits your background, we'll already know each other.</p>
+        <p class="d">New roles are posted here as they open. Register your interest below, when a role fits your background, we'll already know each other.</p>
         <a class="go" href="#register">Register your interest <span class="arr">&rarr;</span></a>
       </div>
       <article class="card proj" data-r data-d="1">
         <span class="tag">Example listing &middot; design preview</span>
-        <h3>Senior Project Manager — Civil Infrastructure</h3>
+        <h3>Senior Project Manager, Civil Infrastructure</h3>
         <p class="d">Adelaide SA &middot; Full-time &middot; Applications close 30 September</p>
         <ul>
           <li>Lead delivery on a state infrastructure project</li>
           <li>Own the program, commercial position and client relationship</li>
           <li>Tier 1 delivery experience well regarded</li>
         </ul>
-        <p class="fnote">Shown as a design preview — how an advertised role appears on the live site.</p>
+        <p class="fnote">Shown as a design preview, how an advertised role appears on the live site.</p>
       </article>
     </div>
   </div>
@@ -909,8 +908,8 @@ const careers = head(
     <div class="sec-head"><div data-r><p class="eyebrow">Why Confluent</p><h2 class="h-sec">Senior work, done properly.</h2></div></div>
     <div class="grid3">
       <div class="card model" data-r><span class="tag">LINEAGE</span><h3>Tier 1 contractor experience</h3><p class="d">Work alongside directors who have led delivery, commercial and operational outcomes in Tier&nbsp;1 environments.</p></div>
-      <div class="card model" data-r data-d="1"><span class="tag">BREADTH</span><h3>Mining, civil infrastructure and defence</h3><p class="d">Project exposure across sectors — open cut mining, state infrastructure and defence environments.</p></div>
-      <div class="card model" data-r data-d="2"><span class="tag">MODEL</span><h3>Embedded with real clients</h3><p class="d">Advisory, embedded and delivery engagements — professional work inside real project teams.</p></div>
+      <div class="card model" data-r data-d="1"><span class="tag">BREADTH</span><h3>Mining, civil infrastructure and defence</h3><p class="d">Project exposure across sectors, open cut mining, state infrastructure and defence environments.</p></div>
+      <div class="card model" data-r data-d="2"><span class="tag">MODEL</span><h3>Embedded with real clients</h3><p class="d">Advisory, embedded and delivery engagements, professional work inside real project teams.</p></div>
     </div>
   </div>
 </section>
@@ -921,7 +920,7 @@ const careers = head(
       <p class="eyebrow">Expressions of interest</p>
       <h2 class="h-sub">When a role fits, we'll already know each other.</h2>
       <div class="c-line"><span class="k">Email</span><a href="mailto:info@confluentgroup.com.au">info@confluentgroup.com.au</a></div>
-      <div class="c-line"><span class="k">Phone</span><a href="tel:+61425014666">0425 014 666</a></div>
+      
       <div class="c-line"><span class="k">Location</span><span class="plain">Adelaide, South Australia &middot; national reach</span></div>
       <div class="c-line"><span class="k">Disciplines</span><span class="plain">Project management &middot; Engineering &middot; Commercial &amp; contracts</span></div>
     </div>
@@ -936,11 +935,11 @@ const careers = head(
       </div>
       <div class="f-field"><label for="c-bg">Your background</label><textarea id="c-bg" rows="4"></textarea></div>
       <a class="btn btn-solid" href="mailto:info@confluentgroup.com.au?subject=Expression%20of%20interest%20%E2%80%94%20via%20confluentgroup.com.au">Register your interest <span class="arr">&rarr;</span></a>
-      <p class="fnote">Concept note: on the live site this form delivers straight to your inbox with spam protection — shown here as a design preview.</p>
+      <p class="fnote">Concept note: on the live site this form delivers straight to your inbox with spam protection, shown here as a design preview.</p>
     </div>
   </div>
 </section>
-${ctaBand("An experienced PM or engineer?", "Email your CV with a few lines on your background — a director will come back to you directly.")}
+${ctaBand("An experienced PM or engineer?", "Email your CV with a few lines on your background, a director will come back to you directly.")}
 ${footer}`;
 
 /* ---------- emit ---------- */

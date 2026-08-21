@@ -15,8 +15,8 @@
   --card:#FFFFFF;
   --ink:#1B2B3A;
   --ink-soft:#4C5E6E;
-  --copper:#A9743F;
-  --copper-soft:#C08A52;
+  --copper:#3C6084;
+  --copper-soft:#8FB2D4;
   --line:#E0E5EA;
   --max:1180px;
   --r:14px;
@@ -426,3 +426,12 @@ a.card{text-decoration:none}
 @media(max-width:860px){
   .band-photo{min-height:clamp(300px,44vh,420px)}
 }
+
+
+/* ---- 21 Aug client brand alignment: gold removed, palette from their own logo
+   (navy #00142C, steel blue #3C6084, white). --copper is retained as a token name
+   only so existing rules keep working; its VALUE is now the steel blue. ---- */
+:root{--copper:#3C6084;--copper-soft:#8FB2D4;--steel:#3C6084;--steel-lt:#8FB2D4}
+.lockup img{height:40px;width:auto;display:block}
+.hdr .lockup{display:flex;align-items:center}
+.ftr .lockup img{height:34px}
